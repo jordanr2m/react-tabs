@@ -1,0 +1,68 @@
+.tabs-section {
+    background-color: var(--color-grey);
+}
+
+.tabs-title {
+    min-width: 15rem;
+    margin-right: 1.5rem;
+    z-index: 1;
+}
+
+.tabs {
+    width: 100%;
+    margin: 2rem auto; /* auto centers it */
+}
+
+.tab {
+    width: 100%;
+    padding: 1.5rem;
+    font-size: 1.5rem;
+    font-weight: 400;
+    border: 1px solid var(--color-grey);
+    border-left: 3px solid orangered;
+    background-color: #d9d8d4;
+    cursor: pointer;
+}
+
+/* Styling for Active (viewable) tab */
+.active-tab {
+    background-color: var(--color-purple);
+    border-left: var(--color-purple);
+    color: #fff;
+    position: relative;
+}
+
+/* Create element tail on tab */
+.active-tab::after {
+    content: ""; /* must set content when using ::after */
+    position: absolute;
+    top: 15px;
+    right: -5px;
+    /* Must set a width & height in order to be visible */
+    width: 1.5rem;
+    height: 1.5rem;
+    background-color: var(--color-purple);
+    transform: rotate(45deg); /* Makes it a triangle instead of square tail */
+}
+
+.content {
+    display: none; /* Makes all tab content disappear */
+}
+
+.active-content {
+    display: block; /* Shows the active content */
+    animation: slide-right 0.5s ease 1;
+}
+
+@keyframes slide-right {
+    0% {
+        transform: translateX(-10rem);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+article {
+    padding: 1rem 1rem 1rem 0.5rem;
+}

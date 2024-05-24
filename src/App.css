@@ -406,7 +406,8 @@ p {
   content: "";
   position: absolute;
   left: 50%;
-  bottom: -5px;
+  /* bottom: -5px; - Jordan changed to -15px */
+  bottom: -15px;
   transform: translateX(-50%);
   width: 5rem;
   height: 3px;
